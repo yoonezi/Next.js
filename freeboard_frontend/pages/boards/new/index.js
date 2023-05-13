@@ -19,7 +19,7 @@ import {
   WriterWrapper,
   Youtube,
   Zipcode,
-  ZipcodeWrapper
+  ZipcodeWrapper,
 } from "../../../styles/emotion";
 
 export default function BoardWriteUI() {
@@ -55,7 +55,7 @@ export default function BoardWriteUI() {
       </InputWrapper>
       <InputWrapper>
         <Label>유튜브</Label>
-        <Youtube placeholder="링크를 복사해주세요." />
+        <Youtube placeholder="링크를 복사해주세요" />
       </InputWrapper>
       <ImageWrapper>
         <Label>사진첨부</Label>
