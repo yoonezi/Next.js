@@ -5,18 +5,19 @@ export default function RestGetPage() {
   const [title, setTitle] = useState("");
 
   // 이벤트핸들러 함수
-  function onClickAsync() {
+  const onClickAsync = () => {
     const data = axios.get("https://koreanjson.com/posts/1");
     console.log(data);
-  }
+  };
 
-  async function onClicksync() {
+  //   async function onClicksync() {
+  const onClicksync = async () => {
     const data = await axios.get("https://koreanjson.com/posts/1");
     console.log(data);
     console.log(data.data);
     console.log(data.data.title);
     setTitle(data.data.title);
-  }
+  };
 
   return (
     <>
