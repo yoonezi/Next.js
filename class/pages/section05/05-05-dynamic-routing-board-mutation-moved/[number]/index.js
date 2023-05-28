@@ -1,7 +1,7 @@
 // import { gql } from "apollo-boost";
 // import { useQuery } from "react-apollo";
 import { useQuery, gql } from "@apollo/client";
-import { useRouter } from "next/router ";
+import { useRouter } from "next/router";
 
 const FETCH_BOARD = gql`
   query fetchBoard($number: Int) {
@@ -19,7 +19,7 @@ export default function StaticRoutingMovedPage() {
   console.log(router);
 
   const { data } = useQuery(FETCH_BOARD, {
-    variables: { number: Number(router.query.qqq) },
+    variables: { number: Number(router.query.number) },
   });
   console.log(data);
 
@@ -27,7 +27,7 @@ export default function StaticRoutingMovedPage() {
     <>
       {/* 데이터가 있으면 그리고 없으면 그리지 마 */}
       {/* 먼저, 정적인 부분을 보여주고 그 다음 데이터가 들어오면 {data.fetchBoard.~}부분을 그려준다, */}
-      <div>{router.query.qqq}번 게시글 이동이 완료되었습니다.</div>
+      <div>{router.query.number}번 게시글 이동이 완료되었습니다.</div>
       {/* data?. : optional chaiging */}
       <div>작성자 : {data && data.fetchBoard?.writer} </div>
       <div>제목 : {data?.fetchBoard?.title} </div>
